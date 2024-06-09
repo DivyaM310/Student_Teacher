@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content container-fluid">
+
+    <div class="page-header">
+        <div class="row align-items-center">
+            <div class="col">
+                <h3 class="page-title">Add Session</h3>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="subjects.html">Session</a></li>
+                    <li class="breadcrumb-item active">Add Session</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% include 'includes/messages.html' %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{% url 'add_session'%}" method="post"> 
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="form-title"><span>Session Information</span></h5>
+                            </div>
+                            
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label for="session_year_start">Session Year Start</label>
+                                    <div>
+                                        <select id="session_year_start" class="form-control" name="session_year_start" required>
+                                            <option value="" disabled selected>Select Year</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2029">2029</option>
+                                            <option value="2030">2030</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label for="session_year_end">Session Year End</label>
+                                    <div>
+                                        <select id="session_year_end" class="form-control" name="session_year_end" required>
+                                            <option value="" disabled selected>Select Year</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2029">2029</option>
+                                            <option value="2030">2030</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="col-12 col-sm-6">
+                                
+                            </div>
+                            <br>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Add Session</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
